@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public int countStudents(int[] students, int[] sandwiches) {
         Queue<Integer> q = new LinkedList<>();
