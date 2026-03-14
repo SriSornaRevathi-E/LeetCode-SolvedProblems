@@ -1,10 +1,10 @@
 1class Solution {
-2    public int[] dailyTemperatures(int[] temperatures) {
-3        int n = temperatures.length;
+2    public int[] dailyTemperatures(int[] t) {
+3        int n = t.length;
 4        int[] ans = new int[n];
 5        Stack<Integer> st = new Stack<>();
 6        for (int i = 0; i < n; i++) {
-7            while (!st.isEmpty() && temperatures[i] > temperatures[st.peek()]) {
+7            while (!st.isEmpty() && t[i] > t[st.peek()]) {
 8                int index = st.pop();
 9                ans[index] = i - index;
 10            }
