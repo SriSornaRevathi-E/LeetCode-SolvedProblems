@@ -1,0 +1,25 @@
+1class Solution {
+2    int count = 0;
+3    String result = "";
+4    public String getHappyString(int n, int k) {
+5        backtrack(n, k, new StringBuilder());
+6        return result;
+7    }
+8    private void backtrack(int n, int k, StringBuilder sb) {
+9        if (sb.length() == n) {
+10            count++;
+11            if (count == k) {
+12                result = sb.toString();
+13            }
+14            return;
+15        }
+16        char[] chars = {'a','b','c'};
+17        for (char c : chars) {
+18            if (sb.length() > 0 && sb.charAt(sb.length()-1) == c)
+19                continue;
+20            sb.append(c);
+21            backtrack(n, k, sb);
+22            sb.deleteCharAt(sb.length()-1);
+23        }
+24    }
+25}
